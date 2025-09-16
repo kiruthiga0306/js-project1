@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Quiz App</title>
+</head>
+<body>
+    <h2>Open Console to See Quiz Output</h2>
+    <script> console.log("Simple Online Quiz")
+    let score = 0;
+    const totalQuestions = 3;
+        const questions = [
+            { q: "Which language runs in browser?", options: ["Python", "Javascript", "C++"],answer: "Javascript" },
+            { q: "What does CSS stand for?", options: ["Cascading Style Sheets", "Computer Style System", "Color Style Syntax"], answer: "Cascading Style Sheets" },
+            { q: "Which is a Boolean?", options: ["true", "false", "0"], Answer: "true" }
+        ];
+        let userAnswers = ["Javascript", "Cascading Style Sheets", "true"];
+        for (let i = 0; i < questions.length; i++) {
+            if (userAnswers[i] === questions[i].answer) {
+                score ++;
+            }
+        }
+        console.log("Simple Online Quiz");
+        console.log("Questions:", questions);
+        console.log("User Answers:", userAnswers);
+        console.log("Score:", score + "/" + totalQuestions);
+        for (let i = 0; i < questions.length; i++) {
+            console.log (
+                (i+1) + "." + questions[i].q,
+                "| correct:", questions[i].answer,
+                "|user:", userAnswers[i],
+                "| isCorrect:", userAnswers[i] === questions[i].answer
+            );
+        }
+    </script>
+</body>
+</html>
